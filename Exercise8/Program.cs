@@ -86,9 +86,10 @@
             doubleTroubleVoid.run();
             Console.WriteLine($"Här är värdet som returnerades {myValue}");
 
-            //((IDoubleTroubleVoid)doubleTrouble).run();  //Verkar oxå funka
-            //int myValue2 = ((IDoubleTroubleInt)doubleTrouble).run();   //Verkar oxå funka
-            //Console.WriteLine($"Casta verkar oxå funka {myValue2}");
+            //Jag hade nog gjort så här i stället, så slipper jag ha 2 objekt. Är det någon nackdel med det? Förutom att man måste casta?
+            ((IDoubleTroubleVoid)doubleTrouble).run(); //Verkar oxå funka
+            int myValue2 = ((IDoubleTroubleInt)doubleTrouble).run(); //Verkar oxå funka
+            Console.WriteLine($"Casta verkar oxå funka {myValue2}");
         }
     }
 }
