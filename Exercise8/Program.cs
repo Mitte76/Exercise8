@@ -71,7 +71,9 @@
         {
             Program1 program1 = new();
             Program2 program2 = new();
-            DoubleTrouble doubleTrouble = new();
+            DoubleTrouble doubleTrouble = new DoubleTrouble();
+            IDoubleTroubleInt doubleTroubleInt = new DoubleTrouble();
+            IDoubleTroubleVoid doubleTroubleVoid = new DoubleTrouble();
 
             //program1.Run();
             //program2.Go();
@@ -80,9 +82,13 @@
             program1.StartExtra();
             program2.Start();
 
-            ((IDoubleTroubleVoid)doubleTrouble).run();
-            int myValue = ((IDoubleTroubleInt)doubleTrouble).run();
+            int myValue = doubleTroubleInt.run();
+            doubleTroubleVoid.run();
             Console.WriteLine($"Här är värdet som returnerades {myValue}");
+
+            //((IDoubleTroubleVoid)doubleTrouble).run();  //Verkar oxå funka
+            //int myValue2 = ((IDoubleTroubleInt)doubleTrouble).run();   //Verkar oxå funka
+            //Console.WriteLine($"Casta verkar oxå funka {myValue2}");
         }
     }
 }
